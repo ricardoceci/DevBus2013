@@ -1,0 +1,26 @@
+application: taskcontroldevbus
+version: 14
+runtime: php
+api_version: 1
+handlers:
+- url: /index.php
+  script: index.php
+- url: /webservice.php
+  script: webservice.php
+- url: /mis_pendientes.php
+  script: mis_pendientes.php
+- url: /servidor.php
+  script: servidor.php
+- url: /gadgets
+  static_dir: gadgets
+  expiration: 1m
+- url: /(.*\.(gif|png|jpg|html))
+  static_files: static/\1
+  upload: static/(.*\.(gif|png|jpg|html))
+- url: /css
+  static_dir: css
+  expiration: 1m
+- url: /js
+  static_dir: js
+  expiration: 1m
+  
